@@ -7,7 +7,6 @@ import MovingText from 'react-moving-text';
 import Jett from '../public/jett.png';
 import Sage from '../public/sage.webp';
 import KoreanHappyBirthdayAudio from '../public/Happy Birthday (Korean Version).mp3';
-import ValorantAgents from '../public/ValorantAgents.jpg';
 
 import useWindowDimensions from '../helpers/useWindowDimensions';
 import { useState, useEffect } from 'react';
@@ -20,6 +19,8 @@ export default function Home() {
   );
   const { reward: balloonsReward, isAnimating: isBalloonsAnimating } =
     useReward('balloonsReward', 'balloons', { lifetime: 1750 });
+
+  const { reward } = useReward('rewardId', 'balloons');
 
   const [audio, setAudio] = useState(null);
 
@@ -36,17 +37,7 @@ export default function Home() {
   const isAnimating = isEmojiAnimating || isBalloonsAnimating;
 
   return (
-    <>
-      {isAnimating && (
-        <Image
-          className={styles.backgroundImage}
-          src={ValorantAgents}
-          alt='Valorant Agents'
-          layout='fill'
-          objectFit='cover'
-          objectPosition='center'
-        />
-      )}
+    <div>
       {isAnimating && (
         <Confetti className={styles.confetti} height={height} width={width} />
       )}
@@ -85,12 +76,20 @@ export default function Home() {
             )}
           </button>
         </div>
+        {isAnimating && (
+          <div style={{ paddingTop: '25px' }}>
+            <h1 className='balloon' onClick={reward}>
+              <span id='rewardId' />
+              🎈
+            </h1>
+          </div>
+        )}
       </div>
       <style jsx global>{`
         ${isAnimating
           ? 'body {background: lightpink;} button {background-color: #fff;}'
           : 'body {background: darkslategray;}'}
       `}</style>
-    </>
+    </div>
   );
 }

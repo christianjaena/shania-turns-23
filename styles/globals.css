@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Poppins:ital,wght@1,900&display=swap');
 html,
 body {
+  min-height: 100vh;
+  width: 100%;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   font-family: Poppins;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
 }
 
 div {
@@ -24,13 +25,15 @@ a {
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
 }
 
 button {
   border-radius: 50%;
   height: 15em;
   width: 15em;
-  cursor: pointer;
   outline: none;
   background-color: #b22222;
   border: none;
@@ -48,7 +51,7 @@ h1 {
     -1px 1px 0 #333, 1px 1px 0 #333;
   padding: 0;
   margin: 0;
-  font-size: 5em;
+  font-size: 4em;
   word-wrap: break-word;
   text-align: center;
 }
