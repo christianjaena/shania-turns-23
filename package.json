@@ -9,9 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "file-loader": "^6.2.0",
     "next": "12.1.6",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-confetti": "^6.1.0",
+    "react-dom": "18.2.0",
+    "react-moving-text": "^0.0.7",
+    "react-rewards": "^2.0.4",
+    "url-loader": "^4.1.1"
   },
   "devDependencies": {
     "eslint": "8.18.0",

@@ -114,3 +114,15 @@
     flex-direction: column;
   }
 }
+
+.backgroundImage {
+  z-index: 0;
+}
+
+.confetti {
+  z-index: 1;
+}
+
+.content {
+  z-index: 1;
+}
